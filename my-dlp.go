@@ -24,7 +24,6 @@ func main() {
     // Customize the usage message
     flag.Usage = func() {
         usageText := `
-
 my-dlp 1.0.3
 Usage:
   [mode] -url <URL>
@@ -47,7 +46,7 @@ Positional Arguments:
 Examples:
   my-dlp -mode=mp3 -url=https://example.com/audio
   my-dlp mp4 https://example.com/video
-  my-dlp https://example.com/video  # Runs default mode
+  my-dlp https://example.com/video
 
 `
         fmt.Fprintf(flag.CommandLine.Output(), "%s\n", usageText)
@@ -86,6 +85,7 @@ Examples:
 
     // Validate URL
     if url == "" {
+        fmt.Println()
         fmt.Println("Error: URL to the video is required.")
         fmt.Println()
         flag.Usage()
