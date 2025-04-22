@@ -12,9 +12,9 @@ func main() {
     // Define supported modes and their corresponding yt-dlp options
     modes := map[string][]string{
         "mp3":      {"-x", "--audio-format", "mp3", "--audio-quality", "0"},
-        "mp4":      {"-f", "bestvideo+bestaudio/best[ext=mp4]"},
-        "no-audio": {"-f", "bestvideo/best[ext=mp4]"},
-        "musvid":   {"-f", "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]"},
+        "mp4":      {"-f", "bestvideo+bestaudio/best[ext=mp4]", "-S", "vcodec:h264,res,acodec:m4a"},
+        "no-audio": {"-f", "bestvideo/best[ext=mp4]", "-S", "vcodec:h264,res,acodec:m4a"},
+        "musvid":   {"-f", "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]", "-S", "vcodec:h264,res,acodec:m4a"},
     }
 
     // Define flags
